@@ -33,6 +33,7 @@ WORKDIR /usr/src/app/frontend
 COPY ./dash/frontend/package.json /usr/src/app/frontend
 COPY ./dash/frontend/package-lock.json /usr/src/app/frontend
 COPY ./dash/frontend/vendor /usr/src/app/frontend/vendor
+RUN npm cache clean --force
 RUN npm ci && \
     chown -R root:root node_modules
 
